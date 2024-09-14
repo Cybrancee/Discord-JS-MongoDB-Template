@@ -9,12 +9,12 @@
 ### 2. Clone the GitHub Repository
    - **GIT REPO ADDRESS**: 
      - Enter the GitHub repository link.
-     - Repo Link: `https://github.com/vaqqq/harmybot.git`
+     - Repo Link: `https://github.com/vaqqq/cybrancee-template.git`
      - **Description**: This is the GitHub repository to clone.
 
 ### 3. Select the Install Branch
    - **INSTALL BRANCH**: 
-     - Enter `template`.
+     - Enter `main`.
      - **Description**: The branch of the bot to install.
 
 ### 4. User Uploaded Files
