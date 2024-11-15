@@ -118,7 +118,7 @@ module.exports = {
 
         const command = interaction.options.getSubcommand();
         await interaction.guild.autoModerationRules.fetch()
-        const rule = await interaction.guild.autoModerationRules.cache.find(x => x.name === 'DND mention block - by Harmony')
+        const rule = await interaction.guild.autoModerationRules.cache.find(x => x.name === 'DND mention block - by Your Bot')
         switch (command) {
             case "enable":
                 {
@@ -128,7 +128,7 @@ module.exports = {
                     if (!rule) {
                         const keywords = [`<@1>`, `<@${interaction.user.id}>`]
                         await interaction.guild.autoModerationRules.create({
-                            name: "DND mention block - by Harmony",
+                            name: "DND mention block - by Your Bot",
                             enabled: true,
                             eventType: 1,
                             triggerType: 1,
@@ -140,7 +140,7 @@ module.exports = {
                                     type: 1,
                                     metadata: {
                                         customMessage:
-                                            'This user is currently on DND mode. Blocked by Harmony',
+                                            'This user is currently on DND mode. Blocked by Your Bot',
                                     },
                                 },
                             ],
@@ -326,7 +326,7 @@ module.exports = {
                         .setTimestamp()
                         const loop = keywords.length
                         if(loop === 0){
-                            embed.addFields({name : `**Users on DND :**`, value : `<:arrowHrmny:1223437915703742474> No users on DND`, inline : true})
+                            embed.addFields({name : `**Users on DND :**`, value : `➡️ No users on DND`, inline : true})
                         }
                         else if(loop < 11){
 
@@ -339,7 +339,7 @@ module.exports = {
                                 const user = await interaction.client.users.fetch(userId)
                                 const name = member.nickname || user.displayname || user.username
 
-                                afkusers += `<:arrowHrmny:1223437915703742474>  ${name}\n`;
+                                afkusers += `➡️  ${name}\n`;
                             }
                             else{
                                 const userId = keywords[i].match(/\d+/)[0];
@@ -347,42 +347,42 @@ module.exports = {
                                 const user = await interaction.client.users.fetch(userId)
                                 const name = member.nickname || user.displayname || user.username
                             
-                                afkusers+=`<:arrowHrmny:1223437915703742474>  ${name}\n`
+                                afkusers+=`➡️  ${name}\n`
                             }
                             }
                             embed.addFields({name : `**Users on DND**`, value : afkusers, inline : true})
                         }
                         else{
-                            embed.addFields({name : `**Users on DND**`, value : `<:arrowHrmny:1223437915703742474>  ${loop} users on DND`, inline : true})
+                            embed.addFields({name : `**Users on DND**`, value : `➡️  ${loop} users on DND`, inline : true})
                         }
                         let exemptchannels = Array.from(rule.exemptChannels.keys())
                         let exemptroles = Array.from(rule.exemptRoles.keys())
                         if(exemptroles.length === 0){
-                            embed.addFields({name : `**Exempt Roles**`, value : `<:arrowHrmny:1223437915703742474>  No role exemptions`, inline : true})
+                            embed.addFields({name : `**Exempt Roles**`, value : `➡️  No role exemptions`, inline : true})
                         }
                         else{
                             let roles = ''
                             for(let i = 0; i < exemptroles.length; i++){
                                 if(i + 1 < exemptroles.length){
-                                    roles += `<:arrowHrmny:1223437915703742474>  <@&${exemptroles[i]}>\n`;
+                                    roles += `➡️  <@&${exemptroles[i]}>\n`;
                                 }
                                 else{
-                                    roles +=`<:arrowHrmny:1223437915703742474>  <@&${exemptroles[i]}>\n`
+                                    roles +=`➡️  <@&${exemptroles[i]}>\n`
                                 }
                             }
                             embed.addFields({name : `**Exempt Roles**` , value : `${roles}`, inline : true});
                         }
                         if(exemptchannels.length === 0){
-                            embed.addFields({name : `**Exempt Channels**`, value : `<:arrowHrmny:1223437915703742474>  No channel exemptions`, inline : true})
+                            embed.addFields({name : `**Exempt Channels**`, value : `➡️  No channel exemptions`, inline : true})
                         }
                         else{
                             let channels = ''
                             for(let i = 0; i < exemptchannels.length; i++){
                                 if(i + 1 < exemptchannels.length){
-                                    channels += `<:arrowHrmny:1223437915703742474>  <#${exemptchannels[i]}>\n`;
+                                    channels += `➡️  <#${exemptchannels[i]}>\n`;
                                 }
                                 else{
-                                    channels +=`<:arrowHrmny:1223437915703742474>  <#${exemptchannels[i]}>\n`
+                                    channels +=`➡️  <#${exemptchannels[i]}>\n`
                                 }
                             }
                             embed.addFields({name : `**Exempt Channels**` , value : `${channels}`, inline : true});
@@ -408,7 +408,7 @@ module.exports = {
                                 type: 1,
                                 metadata: {
                                     customMessage:
-                                        '⚠️ This user is currently on DND mode. This message got blocked by Harmony',
+                                        '⚠️ This user is currently on DND mode. This message got blocked by Your Bot',
                                 },
                             },
                             {
@@ -434,7 +434,7 @@ module.exports = {
                             type: 1,
                             metadata: {
                                 customMessage:
-                                    '⚠️ This user is currently on DND mode. This message got blocked by Harmony.',
+                                    '⚠️ This user is currently on DND mode. This message got blocked by Your Bot.',
                             },
                         },
                     ],

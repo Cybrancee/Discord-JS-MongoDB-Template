@@ -98,7 +98,7 @@ module.exports = {
                 console.log(logsChannel)
                 const rule2 = await guild.autoModerationRules.create({
                     name: `Prevent the word ${word} from being used by Cybrancee Template Bot.`,
-                    creatorId: '1220830326188933120', // your bot's client id
+                    creatorId: '', // your bot's client id
                     enabled: true,
                     eventType: 1,
                     triggerType: 1,

@@ -16,7 +16,7 @@ module.exports = {
         } catch (error) {
             console.log(error);
             await interaction.reply({
-                content: `<:XHrmny:1221035766583398411> There was an error while executing this command!`, 
+                content: `❌ There was an error while executing this command!`, 
                 ephemeral: true
             });
         } 
