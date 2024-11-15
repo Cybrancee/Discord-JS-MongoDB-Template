@@ -48,8 +48,8 @@ module.exports = {
                     overTitle: 'Game Over'
                 },
                 emojis: {
-                    xButton: '❌',
-                    oButton: '𖧋',
+                    xButton: '✖️',
+                    oButton: '⭕',
                     blankButton: '🟧'
                 },
                 mentionUser: true,

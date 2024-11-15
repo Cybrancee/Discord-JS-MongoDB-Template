@@ -37,7 +37,7 @@ module.exports = {
         }
 
         if (interaction.member.id === id || interaction.user.id === id) {
-            const selfBanMessage = interaction.user.id === id ? "**You cannot ban yourself.**" : "**You cannot ban the bot itself.**";
+            const selfBanMessage = interaction.user.id === id ? "You cannot ban yourself." : "You cannot ban the bot itself.";
             return await interaction.reply({ content: `**❌ ${selfBanMessage}**`, ephemeral: true });
         }
 

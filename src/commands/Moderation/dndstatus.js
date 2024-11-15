@@ -243,30 +243,36 @@ module.exports = {
             case "exempt-remove":
                 {
                     if (!interaction.member.permissions.has(PermissionsBitField.Flags.ModerateMembers)) {
-                        return interaction.reply({ content: `**❌ You don't have permission to use this command.**`, ephemeral: true })
+                        return interaction.reply({ content: `**❌ You don't have permission to use this command.**`, ephemeral: true });
                     }
                     if (!rule) {
                         return interaction.reply(
-                            "**⚠️ Set a DND rule with \`/dnd enable\` before modifying permissions. You can disable DND once the rule is established.**"
+                            "**⚠️ Set a DND rule with `/dnd enable` before modifying permissions. You can disable DND once the rule is established.**"
                         );
                     }
+                
                     const channel = interaction.options.getChannel("channel");
                     const role = interaction.options.getRole("role");
+                
                     if (role || channel) {
-                        let exemptroles = Array.from(rule.exemptRoles.keys())
-                        let exemptchannels = Array.from(rule.exemptChannels.keys())
-                        console.log(exemptroles)
+                        let exemptroles = Array.from(rule.exemptRoles.keys());
+                        let exemptchannels = Array.from(rule.exemptChannels.keys());
+                
+                        console.log(exemptroles);
+                
                         if (role && exemptroles.includes(role.id)) {
-                            exemptroles = keywords.filter(words => words !== `${role.id}`)
+                            exemptroles = exemptroles.filter(roleId => roleId !== role.id);
                         }
+                
                         if (channel && exemptchannels.includes(channel.id)) {
                             if (channel.type !== ChannelType.GuildText) {
                                 return interaction.reply(
                                     "**⚠️ Please submit an existing text channel.**"
                                 );
                             }
-                            exemptchannels = keywords.filter(words => words !== `${channel.id}`)
+                            exemptchannels = exemptchannels.filter(channelId => channelId !== channel.id);
                         }
+                
                         rule.edit({
                             exemptRoles: exemptroles,
                             exemptChannels: exemptchannels,
@@ -276,9 +282,10 @@ module.exports = {
                             "**⚠️ Please submit a valid role or channel to exempt. Note only text channels are accepted.**"
                         );
                     }
+                
                     interaction.reply("**✅ The server DND rule has been updated.**");
                 }
-                break;
+                break;                    
             case "force-remove":
                 {
                     if (!interaction.member.permissions.has(PermissionsBitField.Flags.ModerateMembers)) {
