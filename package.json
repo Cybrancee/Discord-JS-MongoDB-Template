@@ -6,19 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "vaq",
-  "license": "ISC",
+  "author": "Vaq",
+  "license": "MIT",
   "dependencies": {
-    "@napi-rs/canvas": "^0.1.52",
     "axios": "^1.6.8",
-    "canvas": "^2.11.2",
-    "captcha-canvas": "^3.2.2",
     "discord-gamecord": "^4.4.2",
-    "discord-logs": "^2.2.1",
     "discord.js": "^14.14.1",
     "dotenv": "^16.4.5",
-    "mongodb": "^6.5.0",
-    "mongoose": "^6.0.2",
     "node-fetch": "^3.3.2",
     "os": "^0.1.2"
   }
