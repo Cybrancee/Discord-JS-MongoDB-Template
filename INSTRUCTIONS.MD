@@ -64,7 +64,7 @@
 
 ### 8. GitHub Authentication
    - **GIT USERNAME**: 
-     - Enter `cybrancee` as the GitHub username.
+     - Enter `Cybrancee` as the GitHub username.
      - **Description**: Username to authenticate with Git.
 <a href="https://github.com/Cybrancee/Discord-JS-MongoDB-Template">
    <img src="images/username.png" alt="username-Image" width="380" height="100">
